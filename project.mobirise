@@ -53,7 +53,7 @@
     "cookiesAlert": false,
     "gdpr": false,
     "witsec-white-label": true,
-    "uniqCompNum": 0,
+    "uniqCompNum": 17,
     "versionPublish": "6.0.6",
     "screenshot": "screenshot.png"
   },
@@ -71,156 +71,102 @@
         {
           "alias": false,
           "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
               "background-color": "@bg-value"
             },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "& when (@reverseContent)": {
-              ".row": {
-                "flex-direction": "row-reverse"
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              "& when (@overlay)": {
+                ".mbr-overlay": {
+                  "background": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
               }
             },
-            ".video-wrapper iframe": {
+            "h6": {
+              "line-height": "1.2"
+            },
+            "img, .item-img": {
               "width": "100%",
-              "height": "520px !important"
+              "height": "100%",
+              "& when (@autoSize)": {
+                "height": "(@imageHeight * 100px)",
+                "object-fit": "cover"
+              }
             },
-            ".tab-content": {
-              "background": "@bgvideo",
-              "border-radius": "5px",
-              "padding": "10px",
-              "height": "(@navheight * 1px)"
+            "@media (max-width: 1200px)": {
+              "img, .item-img": {
+                "& when (@autoSize)": {
+                  "height": "(@imageHeight * 75px)",
+                  "object-fit": "cover"
+                }
+              }
             },
-            ".daho-tab": {
-              "border-bottom": "0 !important",
-              "background": "@bgvideo",
-              "border-radius": "5px",
-              "height": "(@navheight * 1px)",
-              "overflow-y": "scroll",
-              "display": "block"
-            },
-            ".tabs-list": {
-              "padding-left": "0",
-              "list-style-type": "none",
-              "margin-bottom": "45px"
-            },
-            ".tabs-list li": {
-              "margin": "auto !important"
-            },
-            ".tabs-list li p": {
-              "display": "block",
-              "margin-top": "10px",
-              "font-weight": "700",
-              "-webkit-transition": ".5s",
-              "transition": "0.5s"
-            },
-            "p": {
-              "margin-bottom": "15px",
-              "line-height": "1.8",
-              "font-weight": "400"
-            },
-            ".section-title": {
-              "margin-bottom": "45px"
-            },
-            ".section-title span": {},
-            ".section-title h2": {
-              "font-weight": "500",
-              "margin-top": "10px",
-              "margin-bottom": "14px"
-            },
-            ".section-title p": {
-              "max-width": "600px",
-              "margin": "auto"
-            },
-            ".daho-tab .nav-item.open .nav-link:focus, .daho-tab .nav-link.active:focus": {
+            ".item:focus, span:focus": {
               "outline": "none"
             },
-            ".nav-item": {
-              "@media (max-width: 767px)": {
-                "width": "100%",
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
                 "margin": "0"
               }
             },
-            "img.thumb": {
-              "width": "(@thumbsize * 1px)",
-              "border-radius": "5px !important",
-              "margin-right": "5px"
-            },
-            ".daho-tab .nav-link": {
-              "transition": "all .5s",
-              "border-bottom": "3px solid transparent",
-              "background": "@bgnav",
+            ".item-wrapper": {
+              "position": "relative",
               "display": "flex",
-              "align-items": "center",
-              "gap": "15px",
-              "border-radius": "5px",
-              "margin": "10px",
-              "padding": "15px",
-              "border": "1px solid rgba(0, 0, 0, 0.1)",
-              "cursor": "pointer",
-              "&:not(.active)": {
-                "color": "@tabsColor"
-              }
+              "flex-flow": "column nowrap",
+              "margin-bottom": "2rem"
             },
-            ".daho-tab .nav-item": {
-              "margin-right": "1.5rem"
-            },
-            ".nav-link, .nav-link.active": {
-              "padding": "1rem 0"
-            },
-            ".daho-tab .nav-link.active": {
-              "color": "@activeColor",
-              "border-bottom": "3px solid @activeColor",
-              "background-color": "@bgactive",
-              "display": "flex",
-              "align-items": "center",
-              "gap": "15px",
-              "border-radius": "5px",
-              "margin": "10px",
-              "padding": "10px",
-              "border": "1px solid rgba(0, 0, 0, 0.1)",
-              "cursor": "pointer"
-            },
-            "H4": {
+            ".mbr-section-btn": {
+              "margin-top": "auto !important",
               "text-align": "center"
-            },
-            "H3": {
-              "text-align": "left",
-              "color": "#4479d9"
             },
             ".mbr-section-title": {
+              "color": "#000000"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000"
+            },
+            ".item-title": {
+              "color": "#000000",
               "text-align": "center"
             },
-            ".mbr-section-span": {
-              "color": "#e43f3f",
+            ".item-subtitle": {
+              "color": "#000000",
               "text-align": "center"
             },
-            ".mbr-section-p": {
+            ".item-text": {
+              "color": "#000000",
               "text-align": "center"
             },
-            "UL": {
-              "color": "#e43f3f"
+            ".content-head": {
+              "max-width": "800px"
             },
-            ".mbr-text": {
-              "color": "#ffffff"
-            },
-            "@media only screen and (max-width: 991px)": {
-              ".tab-content": {
-                "margin-top": "15px"
+            "@media (max-width: 767px)": {
+              "img, .item-img": {
+                "& when (@autoSize)": {
+                  "height": "(@imageHeight * 75px)",
+                  "object-fit": "cover"
+                }
+              },
+              ".item-wrapper": {
+                "margin-bottom": "1rem"
               }
-            },
-            ".noi when not (@ShowImage)": {
-              "display": "none"
             }
           },
-          "_name": "design-block",
-          "_customHTML": "<section data-bs-version=\"5.1\" class group=\"Dahomy\">\n\n<mbr-parameters>\n        <header>©Dahomy</header>\n        <input type=\"checkbox\" title=\"Show Description\" name=\"ShowDescription\" checked>\n \n<input type=\"checkbox\" title=\"Show Image\" name=\"ShowImage\">\n  <input type=\"color\" title=\"Background Active\" value=\"#4479d9\" name=\"bgactive\">\n  <input type=\"checkbox\" title=\"Media On Left/Right\" name=\"reverseContent\">\n\n        <select title=\"Videos\" name=\"bootstrapTabs\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n           <option value=\"7\">7</option>\n           <option value=\"8\">8</option>\n           <option value=\"9\">9</option>\n           <option value=\"10\" selected>10</option>\n        </select>\n \n        <input type=\"color\" name=\"tabsColor\" title=\"Color\" value=\"#000000\">\n        <input type=\"color\" name=\"activeColor\" title=\"Active Color\" value=\"#ffffff\">\n  <input type=\"color\" name=\"bgvideo\" title=\"BG video & Navs\" value=\"#000000\">\n  <input type=\"color\" name=\"bgnav\" title=\"BG  Navs Pause\" value=\"#ffffff\">    \n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"10\" max=\"12\" value=\"12\" step=\"1\">\n<input type=\"range\" name=\"navheight\" title=\"Nav Height\" min=\"610\" max=\"700\" value=\"640\" step=\"10\">\n<input type=\"range\" name=\"thumbsize\" title=\"Thumb Size\" min=\"40\" max=\"100\" value=\"100\" step=\"10\">\n\n\n        <header>Settings</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../../app/themes/mobirise5/components/_images/features/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n         </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay&&bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay&&bg.type !== 'color'\">\n    </mbr-parameters>\n\n<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n</div>\n\n\n <div class=\"container-fluid\"> \n <div class=\"row col-12 col-md-{{textWidth}} media-container-row\">\n<div class=\"col-lg-12\">\n         <div class=\"tabs\">\n             <div class=\"single-tabs tabs-five\">\n              <div class=\"row no-gutters\">\n                <div class=\"col-sm-3\">\n              \n                  <ul class=\"daho-tab mb-0 tabs-list nav flex-column nav-pills\" id=\"v-pills-tab\" role=\"tablist\" aria-orientation=\"vertical\">\n                \n      <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 0\">            \n        <a class=\"nav-link  show active\" id=\"dahotab-one-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-one\" role=\"tab\" aria-controls=\"dahotab-one\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features5.jpg\" class=\"thumb noi \"><span mbr-text><b>Moein</b></span></a></li>\n\n        <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 1\">            \n        <a class=\"nav-link\" id=\"dahotab-two-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-two\" role=\"tab\" aria-controls=\"dahotab-two\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features6.jpg\" class=\"thumb noi \"><span mbr-text><b>Kadem Saher</b></span></a></li>\n\n\n                    <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 2\">            \n        <a class=\"nav-link\" id=\"dahotab-three-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-three\" role=\"tab\" aria-controls=\"dahotab-three\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features7.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Three </b></span></a></li>\n\n                 <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 3\">            \n        <a class=\"nav-link\" id=\"dahotab-four-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-four\" role=\"tab\" aria-controls=\"dahotab-four\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features1.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Four </b></span></a></li>\n \n \n <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 4\">            \n        <a class=\"nav-link\" id=\"dahotab-five-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-five\" role=\"tab\" aria-controls=\"dahotab-five\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features2.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Five</b></span></a></li>\n \n \n \n <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 5\">            \n        <a class=\"nav-link\" id=\"dahotab-six-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-six\" role=\"tab\" aria-controls=\"dahotab-six\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features3.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Six </b></span></a></li>\n \n \n \n \n <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 6\">            \n        <a class=\"nav-link\" id=\"dahotab-seven-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-seven\" role=\"tab\" aria-controls=\"dahotab-seven\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features4.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Seven</b></span></a></li>\n \n \n \n <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 7\">            \n        <a class=\"nav-link\" id=\"dahotab-height-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-height\" role=\"tab\" aria-controls=\"dahotab-height\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features5.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Height</b></span></a></li>\n \n \n \n <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 8\">            \n        <a class=\"nav-link\" id=\"dahotab-nine-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-nine\" role=\"tab\" aria-controls=\"dahotab-nine\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features6.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Nine</b></span></a></li>\n \n \n \n <li mbr-theme-style=\"display-7\" class=\"nav-item  mbr-fonts-style\" mbr-if=\"bootstrapTabs > 9\">            \n        <a class=\"nav-link\" id=\"dahotab-ten-tab\" data-bs-toggle=\"pill\" href=\"#dahotab-ten\" role=\"tab\" aria-controls=\"dahotab-ten\" aria-selected=\"true\">\n <img src=\"../../app/themes/mobirise5/components/_images/features/features7.jpg\" class=\"thumb noi \"><span mbr-text><b>Video Ten</b></span></a></li>\n \n  \n \n                  </ul>\n                </div>\n                <div class=\"col-sm-8\">\n                  <div class=\"tab-content\" id=\"v-pills-tabContent\">\n\n          <div class=\"tab-pane fade active show\" id=\"dahotab-one\" role=\"tabpanel\" aria-labelledby=\"dahotab-one-tab\" mbr-if=\"bootstrapTabs > 0\">\n                     \n                        <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=dWl5Wiq49S4&list=RDdWl5Wiq49S4&start_radio=1\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Concert Moein&nbsp; کنسرت معین</p>\n                      </div>\n                    \n\n                    <div class=\"tab-pane fade\" id=\"dahotab-two\" role=\"tabpanel\" aria-labelledby=\"dahotab-two-tab\" mbr-if=\"bootstrapTabs > 1\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=WURalCOyIfw&list=RDWURalCOyIfw&start_radio=1\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Concert Kadem El Saher<br>کاظم الساهر</p>\n                      </div>\n                   \n\n                    <div class=\"tab-pane fade\" id=\"dahotab-three\" role=\"tabpanel\" aria-labelledby=\"dahotab-three-tab\" mbr-if=\"bootstrapTabs > 2\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=HujDEPAWboE&loop=0&autoplay=0\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 3</p>\n                      </div>\n\n                    <div class=\"tab-pane fade\" id=\"dahotab-four\" role=\"tabpanel\" aria-labelledby=\"dahotab-four-tab\" mbr-if=\"bootstrapTabs > 3\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=VA8PzkQa8d8\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 4</p>\n                      </div>\n                      \n                      \n   <div class=\"tab-pane fade\" id=\"dahotab-five\" role=\"tabpanel\" aria-labelledby=\"dahotab-five-tab\" mbr-if=\"bootstrapTabs > 4\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=HujDEPAWboE&loop=0&autoplay=0\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 5</p>\n                      </div>                   \n                      \n                      \n    <div class=\"tab-pane fade\" id=\"dahotab-six\" role=\"tabpanel\" aria-labelledby=\"dahotab-six-tab\" mbr-if=\"bootstrapTabs > 5\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=VA8PzkQa8d8\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 6</p>\n                      </div>                  \n                      \n                      \n   <div class=\"tab-pane fade\" id=\"dahotab-seven\" role=\"tabpanel\" aria-labelledby=\"dahotab-seven-tab\" mbr-if=\"bootstrapTabs > 6\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=HujDEPAWboE&loop=0&autoplay=0\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 7</p>\n                      </div>                   \n                      \n  <div class=\"tab-pane fade\" id=\"dahotab-height\" role=\"tabpanel\" aria-labelledby=\"dahotab-height-tab\" mbr-if=\"bootstrapTabs > 7\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=VA8PzkQa8d8\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 8</p>\n                      </div>                    \n                      \n <div class=\"tab-pane fade\" id=\"dahotab-nine\" role=\"tabpanel\" aria-labelledby=\"dahotab-nine-tab\" mbr-if=\"bootstrapTabs > 8\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=HujDEPAWboE&loop=0&autoplay=0\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 9</p>\n                      </div>                     \n                      \n                      \n  <div class=\"tab-pane fade\" id=\"dahotab-ten\" role=\"tabpanel\" aria-labelledby=\"dahotab-ten-tab\" mbr-if=\"bootstrapTabs > 9\">\n                      \n                       <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=VA8PzkQa8d8\"></iframe>\n                </div> <p class=\"mbr-text  pt-3 p-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"ShowDescription\">\n                    Video Description 10</p>\n                      </div>                    \n                      \n                      \n                      \n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div></div>\n </div>\n</section>",
-          "_cid": "moUuEOV3dy",
-          "_anchor": "design-block-moUuEOV3dy",
+          "_name": "gallery03",
           "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery3\" group=\"Gallery\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n      <header>Size</header>\n      <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n      <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n      <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n      <select title=\"Columns\" name=\"cardsWidth\">\n        <option value=\"12\">1</option>\n        <option value=\"6\">2</option>\n        <option value=\"4\">3</option>\n        <option value=\"3\" selected>4</option>\n        <option value=\"2\">6</option>\n      </select>\n      <header>Show/Hide</header>\n      <input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked>\n      <input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n      <header>Cards</header>\n      <input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\">\n      <input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"autoSize\">\n      <input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n      <input type=\"checkbox\" name=\"showCardTitle\" title=\"Title\" checked>\n      <input type=\"checkbox\" name=\"showCardSubtitle\" title=\"Subtitle\">\n      <header>Background</header>\n      <fieldset type=\"background\" parallax name=\"bg\" required>\n        <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n        <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      </fieldset>\n      <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n      <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#edefeb\" condition=\"overlay && bg.type == 'image'\">\n      <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n      <div class=\"row justify-content-center\">\n        <div class=\"col-12 content-head\">\n          <div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n            <h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n              <b>Video Gallery</b>\n            </h4>\n            <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n              To add more cards, hover on a card and click 'Add items'\n            </h5>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}} active\">\n          <div class=\"item-wrapper\">\n            \n            <div class=\"item-content align-left\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n              <h5 class=\"item-title mbr-fonts-style mt-3 mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-title, .mbr-section-btn\" mbr-if=\"showCardTitle\">\n                <b>Moein</b></h5>\n              <h6 class=\"item-subtitle mbr-fonts-style mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle, .mbr-section-btn\" mbr-if=\"showCardSubtitle\">\n                Lorem ipsum dolor sit amet, adipiscing elit.\n              </h6>\n            </div>\n            <div mbr-video class=\"mbr-figure col-12 mb-5 col-md-{{videoWidth}}\">\n        <iframe src=\"https://www.youtube.com/watch?v=dWl5Wiq49S4&list=RDdWl5Wiq49S4&start_radio=1&loop=1&autoplay=1\"></iframe>\n      </div>\n          </div>\n        </div>\n        <div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n          <div class=\"item-wrapper\">\n            \n            <div class=\"item-content align-left\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n              <h5 class=\"item-title mbr-fonts-style mt-3 mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-title, .mbr-section-btn\" mbr-if=\"showCardTitle\">\n                <b>Kadem El Saher</b></h5>\n              <h6 class=\"item-subtitle mbr-fonts-style mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle, .mbr-section-btn\" mbr-if=\"showCardSubtitle\">\n                Lorem ipsum dolor sit amet, adipiscing elit.\n              </h6>\n            </div>\n            <div mbr-video class=\"mbr-figure col-12 mb-5 col-md-{{videoWidth}}\">\n        <iframe src=\"https://www.youtube.com/watch?v=Egwlt2V_bw4&list=RDEgwlt2V_bw4&start_radio=1&loop=1&autoplay=1\"></iframe>\n      </div>\n          </div>\n        </div><div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n          <div class=\"item-wrapper\">\n            \n            <div class=\"item-content align-left\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n              <h5 class=\"item-title mbr-fonts-style mt-3 mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-title, .mbr-section-btn\" mbr-if=\"showCardTitle\"><b>André Rieu-Bahrain</b></h5>\n              <h6 class=\"item-subtitle mbr-fonts-style mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle, .mbr-section-btn\" mbr-if=\"showCardSubtitle\">\n                Lorem ipsum dolor sit amet, adipiscing elit.\n              </h6>\n              \n            </div>\n            <div mbr-video class=\"mbr-figure col-12 mb-5 col-md-{{videoWidth}}\">\n        <iframe src=\"https://www.youtube.com/watch?v=ub37AUv2ac0&list=RDub37AUv2ac0&start_radio=1&loop=1&autoplay=1\"></iframe>\n      </div>\n          </div>\n        </div>\n        \n        <div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n          <div class=\"item-wrapper\">\n            \n            <div class=\"item-content align-left\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n              <h5 class=\"item-title mbr-fonts-style mt-3 mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-title, .mbr-section-btn\" mbr-if=\"showCardTitle\"><b>Riyad Concert</b></h5>\n              <h6 class=\"item-subtitle mbr-fonts-style mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle, .mbr-section-btn\" mbr-if=\"showCardSubtitle\">\n                Lorem ipsum dolor sit amet, adipiscing elit.\n              </h6>\n            </div>\n            <div mbr-video class=\"mbr-figure col-12 mb-5 col-md-{{videoWidth}}\">\n        <iframe src=\"https://www.youtube.com/watch?v=HRjedW0LB-I&list=RDHRjedW0LB-I&start_radio=1&loop=1&autoplay=1\"></iframe>\n      </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>",
+          "_cid": "uWHtfWqFYJ",
+          "_anchor": "gallery03-g",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
