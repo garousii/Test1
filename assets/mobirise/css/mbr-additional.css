@@ -779,12 +779,9 @@ a {
   }
 }
 .cid-moUuEOV3dy {
-  padding-top: 15px;
-  padding-bottom: 45px;
+  padding-top: 0px;
+  padding-bottom: 15px;
   background-color: #ffffff;
-}
-.cid-moUuEOV3dy .row {
-  flex-direction: row-reverse;
 }
 .cid-moUuEOV3dy .video-wrapper iframe {
   width: 100%;
@@ -794,13 +791,13 @@ a {
   background: #000000;
   border-radius: 5px;
   padding: 10px;
-  height: 610px;
+  height: 650px;
 }
 .cid-moUuEOV3dy .daho-tab {
   border-bottom: 0 !important;
   background: #000000;
   border-radius: 5px;
-  height: 610px;
+  height: 650px;
   overflow-y: scroll;
   display: block;
 }
@@ -914,4 +911,7 @@ a {
   .cid-moUuEOV3dy .tab-content {
     margin-top: 15px;
   }
+}
+.cid-moUuEOV3dy .noi {
+  display: none;
 }
