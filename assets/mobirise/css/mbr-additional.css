@@ -791,13 +791,13 @@ a {
   background: #000000;
   border-radius: 5px;
   padding: 10px;
-  height: 650px;
+  height: 640px;
 }
 .cid-moUuEOV3dy .daho-tab {
   border-bottom: 0 !important;
   background: #000000;
   border-radius: 5px;
-  height: 650px;
+  height: 640px;
   overflow-y: scroll;
   display: block;
 }
@@ -844,7 +844,7 @@ a {
   }
 }
 .cid-moUuEOV3dy img.thumb {
-  width: 90px;
+  width: 100px;
   border-radius: 5px !important;
   margin-right: 5px;
 }
